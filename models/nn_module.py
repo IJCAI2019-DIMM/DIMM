@@ -8,7 +8,7 @@ def dense(inputs, hidden, use_bias=True, scope='dense', initializer=None):
     with tf.variable_scope(scope):
         shape = tf.shape(inputs)
         dim = inputs.get_shape().as_list()[-1]
-        # 前两个维度与输入相同，最后加上输出维度
+
         out_shape = [shape[idx] for idx in range(len(inputs.get_shape().as_list()) - 1)] + [hidden]
 
         flat_inputs = tf.reshape(inputs, [-1, dim])

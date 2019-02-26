@@ -311,7 +311,7 @@ def run():
     logger = logging.getLogger('Medical')
     logger.setLevel(logging.INFO)
     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-    # 是否存储日志
+
     if args.log_path:
         file_handler = logging.FileHandler(args.log_path)
         file_handler.setLevel(logging.INFO)
@@ -338,15 +338,15 @@ def run():
 
     class FilePaths(object):
         def __init__(self):
-            # 运行记录文件
+
             self.train_record_file = os.path.join(args.preprocessed_dir, 'train.tfrecords')
             self.dev_record_file = os.path.join(args.preprocessed_dir, 'dev.tfrecords')
             self.test_record_file = os.path.join(args.preprocessed_dir, 'test.tfrecords')
-            # 评估文件
+
             self.train_eval_file = os.path.join(args.preprocessed_dir, 'train_eval.json')
             self.dev_eval_file = os.path.join(args.preprocessed_dir, 'dev_eval.json')
             self.test_eval_file = os.path.join(args.preprocessed_dir, 'test_eval.json')
-            # 计数文件
+
             self.train_meta = os.path.join(args.preprocessed_dir, 'train_meta.json')
             self.dev_meta = os.path.join(args.preprocessed_dir, 'dev_meta.json')
             self.test_meta = os.path.join(args.preprocessed_dir, 'test_meta.json')
